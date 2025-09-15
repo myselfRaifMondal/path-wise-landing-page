@@ -8,8 +8,7 @@ export default function LandingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [count, setCount] = useState<number | null>(null);
 
-  // Replace with your own Apps Script URL
-  const APPS_SCRIPT_URL = "";
+  const APPS_SCRIPT_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhC1q0xYMmuWAavsNbruxVZLJpkGSE4QobDetj01ZUCUQjoGlbAanHuVRse7r-bdotgmaEQMzhQnLTYLkaD3rgZjqYZUtxSKpfWR8dT_IJPYlGr-QLI7NDPKozUqumZD3mqLHU632ek9OGbG14scj3s8HnzV9RIb7oJhD4V42LzPF-CIwO1jvN0T7M2Xh0TEYvldaP6PAwxd6JiZBKZSvST9IO7JBuXgWD_Hlpb1o7ZSqoXklWAYcFubpgcfstL3-3-fD6iu2tUGw2ZYJzKeSyIkAPdkxUA9dzEhQCV&lib=M_vx3jfIrjADubqFYYnOqs17WtugG7ENY";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
