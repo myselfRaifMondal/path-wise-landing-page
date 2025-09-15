@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathwise — Your Internship Tracker</title>
+    <meta name="description" content="Never miss an internship deadline again. Track all your applications, get smart reminders, and stay organized with ease.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Pathwise — Your Internship Tracker</h1>
+                <p class="hero-subtitle">
+                    Never miss an internship deadline again. Track all your applications, get smart reminders, and stay organized with ease.
+                </p>
+                <div class="waitlist-count" id="waitlistCount" style="display: none;">
+                    <p>Join <span id="countNumber">0</span> students already on the waitlist</p>
+                </div>
+                <div class="hero-form" id="heroForm">
+                    <form id="signupForm" class="signup-form">
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            placeholder="Enter your email" 
+                            class="form-control email-input"
+                            required
+                        >
+                        <button type="submit" class="btn btn--primary signup-btn" id="submitBtn">
+                            <span class="btn-text">Join Waitlist</span>
+                            <span class="btn-loader" style="display: none;">⏳</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <p>✅ Thanks! You're on the waitlist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Pathwise?</h2>
+                <p class="section-subtitle">
+                    College students lose track of internship applications every semester. Spreadsheets get messy, deadlines slip, and opportunities are missed. Pathwise changes that.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="card feature-card">
+                    <div class="card__body">
+                        <div class="feature-icon">📅</div>
+                        <h3 class="feature-title">Deadline Reminders</h3>
+                        <p class="feature-description">Auto-sync with Google Calendar so you never miss a deadline.</p>
+                    </div>
+                </div>
+                <div class="card feature-card">
+                    <div class="card__body">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Status Dashboard</h3>
+                        <p class="feature-description">Track every application across Applied, Interview, Offer, or Rejected.</p>
+                    </div>
+                </div>
+                <div class="card feature-card">
+                    <div class="card__body">
+                        <div class="feature-icon">✅</div>
+                        <h3 class="feature-title">Simple & Organized</h3>
+                        <p class="feature-description">One clean interface to replace messy spreadsheets and sticky notes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Early Pricing</h2>
+                <p class="section-subtitle">Join early and help shape the future of Pathwise.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="card pricing-card">
+                    <div class="card__body">
+                        <h3 class="pricing-title">Free Plan</h3>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">✔ Track up to 5 applications</li>
+                            <li class="pricing-feature">✔ Manual reminders</li>
+                            <li class="pricing-feature">✔ Basic dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card pricing-card pricing-card--featured">
+                    <div class="card__body">
+                        <h3 class="pricing-title pricing-title--featured">Pro — ₹200/month</h3>
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">✔ Unlimited applications</li>
+                            <li class="pricing-feature">✔ Google Calendar sync</li>
+                            <li class="pricing-feature">✔ Priority support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to simplify your internship hunt?</h2>
+                <div class="cta-form" id="ctaForm">
+                    <form id="signupFormCta" class="signup-form">
+                        <input 
+                            type="email" 
+                            id="emailInputCta" 
+                            placeholder="Enter your email" 
+                            class="form-control email-input"
+                            required
+                        >
+                        <button type="submit" class="btn btn--primary signup-btn" id="submitBtnCta">
+                            <span class="btn-text">Join Waitlist</span>
+                            <span class="btn-loader" style="display: none;">⏳</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="success-message" id="successMessageCta" style="display: none;">
+                    <p>✅ You're already on the waitlist!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Pathwise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
