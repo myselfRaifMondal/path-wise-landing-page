@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect } from "react";
 
 export default function LandingPage() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,43 @@ export default function LandingPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    // TODO: Connect to backend or service like Google Sheets / Airtable / Mailchimp
+    const APPS_SCRIPT_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhC1q0xYMmuWAavsNbruxVZLJpkGSE4QobDetj01ZUCUQjoGlbAanHuVRse7r-bdotgmaEQMzhQnLTYLkaD3rgZjqYZUtxSKpfWR8dT_IJPYlGr-QLI7NDPKozUqumZD3mqLHU632ek9OGbG14scj3s8HnzV9RIb7oJhD4V42LzPF-CIwO1jvN0T7M2Xh0TEYvldaP6PAwxd6JiZBKZSvST9IO7JBuXgWD_Hlpb1o7ZSqoXklWAYcFubpgcfstL3-3-fD6iu2tUGw2ZYJzKeSyIkAPdkxUA9dzEhQCV&lib=M_vx3jfIrjADubqFYYnOqs17WtugG7ENY"; // replace
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!email) return;
+      try {
+        const res = await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const j = await res.json();
+        if (j.ok) {
+          setSubmitted(true);
+          setEmail("");
+        } else {
+          alert("Error saving email: " + (j.error || "unknown"));
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Network error");
+      }
+    };
+  const [count, setCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function fetchCount(){
+      try {
+        const r = await fetch(APPS_SCRIPT_URL);
+        const j = await r.json();
+        setCount(j.count ?? 0);
+      } catch(e){ console.log(e); }
+    }
+    fetchCount();
+    const t = setInterval(fetchCount, 30_000); // refresh every 30s
+    return () => clearInterval(t);
+  }, []);
+
     console.log("Captured email:", email);
     setSubmitted(true);
     setEmail("");
@@ -19,6 +56,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
       {/* Hero Section */}
+      <p className="text-sm text-gray-500 mt-2">{count ? `Join ${count} students already on the waitlist` : ''}</p>
       <section className="flex flex-col items-center justify-center py-20 text-center px-6">
         <motion.h1
           className="text-5xl font-extrabold mb-6 text-blue-700"
