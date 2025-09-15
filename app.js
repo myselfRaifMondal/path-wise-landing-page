@@ -7,7 +7,7 @@ let appState = {
 
 // Configuration
 const CONFIG = {
-  APPS_SCRIPT_URL: "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhC1q0xYMmuWAavsNbruxVZLJpkGSE4QobDetj01ZUCUQjoGlbAanHuVRse7r-bdotgmaEQMzhQnLTYLkaD3rgZjqYZUtxSKpfWR8dT_IJPYlGr-QLI7NDPKozUqumZD3mqLHU632ek9OGbG14scj3s8HnzV9RIb7oJhD4V42LzPF-CIwO1jvN0T7M2Xh0TEYvldaP6PAwxd6JiZBKZSvST9IO7JBuXgWD_Hlpb1o7ZSqoXklWAYcFubpgcfstL3-3-fD6iu2tUGw2ZYJzKeSyIkAPdkxUA9dzEhQCV&lib=M_vx3jfIrjADubqFYYnOqs17WtugG7ENY",
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwu7N_qyQEXpEU0nWmUfmMpBZ0rXiduOUjKeb0j4drw7tnrUlAiHBIyfinawN9GPxsAxA/exec",
   FETCH_INTERVAL: 30000, // 30 seconds
   RETRY_DELAY: 2000 // 2 seconds
 };
